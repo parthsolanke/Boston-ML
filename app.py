@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 from flask import Flask, request, render_template, app, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='staticFiles')
 
 # loading model and scaler
 model = pickle.load(open(r'Model&Scaler\boston.pickle', 'rb'))
