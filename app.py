@@ -1,8 +1,8 @@
 import numpy as np
 import pickle
-from flask import Flask, request, render_template, app, url_for
+from flask import Flask, request, render_template
 
-app = Flask(__name__, template_folder='templates', static_folder='staticFiles')
+app = Flask(__name__, static_folder='static')
 
 # loading model and scaler
 model = pickle.load(open(r'Model&Scaler\boston.pickle', 'rb'))
@@ -33,7 +33,7 @@ def predict():
     # making prediction
     prediction = model.predict(data)
     output = round(prediction[0], 2)
-    return render_template('index.html', prediction_text='House price should be $ {}'.format(output))
+    return render_template('predict.html', prediction_text=f'Predicted House Price ${output}')
 
 if __name__ == "__main__":
     app.run(debug=True)
