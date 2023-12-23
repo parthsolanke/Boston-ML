@@ -1,2 +1,3 @@
 # Boston-ML
-ML project implementation with Dockers And Github Action and deployment on heroku
+ML app for Boston Housing Dataset with Flask API
+![alt text](./static/app.png "app image")
