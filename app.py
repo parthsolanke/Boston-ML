@@ -33,7 +33,7 @@ def predict():
     # making prediction
     prediction = model.predict(data)
     output = round(prediction[0], 2)
-    return render_template('predict.html', prediction_text=f'Predicted House Price ${output}')
+    return render_template('predict.html', prediction_text=f'Predicted House Price ₹{output*80}')
 
 if __name__ == "__main__":
     app.run(debug=True)
